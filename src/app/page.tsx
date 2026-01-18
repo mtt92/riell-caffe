@@ -689,19 +689,18 @@ export default function RiellCafePage() {
           </div>
 
           <div className="border-t border-stone-700 pt-8 text-center text-stone-400">
-  <p className={`${pacifico.className} text-2xl text-red-400 mb-2`}>Riell Cafè</p>
-  <p className="mb-2">© 2025 Riell Cafè - Il Salotto di Voltri. Tutti i diritti riservati.</p>
-  <p className="text-sm mt-4">
-    Powered by{' '}
-    <a 
-      href="https://bysim.biz" 
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-red-400 hover:text-red-300 transition-colors font-semibold"
-    >
-      bysim.biz
-    </a>
-  </p>
+<p className={`${pacifico.className} text-2xl text-red-400 mb-2`}>Riell Cafè</p>
+<p className="text-sm mt-4">
+  Powered by{' '}
+  <a 
+    href="https://bysim.biz" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-red-400 hover:text-red-300 transition-colors font-semibold"
+  >
+    bysim.biz
+  </a>
+</p>
 </div>
       </footer>
 
