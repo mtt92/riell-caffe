@@ -676,12 +676,12 @@ export default function RiellCafePage() {
                 <div>
                   <p className="font-semibold text-lg">Social</p>
                   <a 
-                    href="https://instagram.com/riellcafe" 
+                    href="https://ihttps://www.instagram.com/riell_cafe/" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-stone-300 hover:text-red-400 transition-colors"
                   >
-                    @riellcafe
+                    @riell_cafe
                   </a>
                 </div>
               </div>
