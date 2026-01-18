@@ -124,9 +124,9 @@ export default function RiellCafePage() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img 
-                src="/images/logo.jpeg" 
-                alt="Riell Cafè Logo" 
+              <img
+                src="/images/logo.jpeg"
+                alt="Riell Cafè Logo"
                 className="h-12 md:h-16 w-auto"
               />
             </div>
@@ -152,7 +152,7 @@ export default function RiellCafePage() {
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden text-stone-900"
             >
@@ -182,7 +182,7 @@ export default function RiellCafePage() {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 z-0"
           style={{
             backgroundImage: 'url(/images/cappuccino.jpeg)',
@@ -194,7 +194,7 @@ export default function RiellCafePage() {
         </div>
 
         <div className="container mx-auto px-4 z-10 text-center text-white">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -202,8 +202,8 @@ export default function RiellCafePage() {
           >
             Il buongiorno inizia qui,<br />nel salotto di Voltri.
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -251,11 +251,10 @@ export default function RiellCafePage() {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all shadow-lg ${
-                    activeTab === tab
+                  className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all shadow-lg ${activeTab === tab
                       ? 'bg-red-800 text-white scale-105'
                       : 'bg-white text-stone-900 hover:bg-stone-100'
-                  }`}
+                    }`}
                 >
                   <TabIcon className="w-5 h-5" />
                   {menuContent[tab].title}
@@ -513,7 +512,7 @@ export default function RiellCafePage() {
           <h2 className={`${pacifico.className} text-4xl md:text-5xl text-red-800 mb-12 text-center`}>
             I Nostri Aperitivi
           </h2>
-          
+
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -662,8 +661,8 @@ export default function RiellCafePage() {
                 <Phone className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-lg">Telefono</p>
-                  <a 
-                    href="tel:+393403935560" 
+                  <a
+                    href="tel:+393403935560"
                     className="text-stone-300 hover:text-red-400 transition-colors"
                   >
                     +39 340 393 5560
@@ -675,8 +674,8 @@ export default function RiellCafePage() {
                 <Instagram className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-lg">Social</p>
-                  <a 
-                    href="https://ihttps://www.instagram.com/riell_cafe/" 
+                  <a
+                    href="https://www.instagram.com/riell_cafe/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-stone-300 hover:text-red-400 transition-colors"
@@ -689,19 +688,21 @@ export default function RiellCafePage() {
           </div>
 
           <div className="border-t border-stone-700 pt-8 text-center text-stone-400">
-<p className={`${pacifico.className} text-2xl text-red-400 mb-2`}>Riell Cafè</p>
-<p className="text-sm mt-4">
-  Powered by{' '}
-  <a 
-    href="https://bysim.biz" 
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-red-400 hover:text-red-300 transition-colors font-semibold"
-  >
-    bysim.biz
-  </a>
-</p>
-</div>
+            <p className={`${pacifico.className} text-2xl text-red-400 mb-2`}>Riell Cafè</p>
+            <p className="mb-2">© 2025 Riell Cafè - Il Salotto di Voltri. Tutti i diritti riservati.</p>
+            <p className="text-sm mt-3 text-stone-500">
+              Powered by{' '}
+              <a
+                href="https://bysim.biz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red-400 hover:text-red-300 transition-colors font-semibold"
+              >
+                bysim.biz
+              </a>
+            </p>
+          </div>
+       </div>     
       </footer>
 
       {/* Floating WhatsApp Button */}
