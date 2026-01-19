@@ -21,10 +21,12 @@ const menuContent = {
       'Focaccia genovese calda appena sfornata',
       'Caffè Boasi - Miscela esclusiva',
       'Brioches artigianali ripiene',
-      'Cornetti (cioccolato, pistacchio, mandorle, cocco)',
+      'Cornetti (cioccolato, pistacchio, mandorle, crema)',
+      'Cornetti Vegano',
       'Cappuccini cremosi con latte art',
-      'Donuts al pistacchio',
-      'Spremute fresche di stagione'
+      'Crostate Donuts al cioccolato e crema',
+      'Spremute fresche di stagione',
+      'E tanto altro...'
     ],
     accent: 'amber-700'
   },
@@ -35,11 +37,14 @@ const menuContent = {
     icon: Utensils,
     image: '/images/hamburger.jpeg',
     items: [
+      'Lasagne al ragù',
       'Hamburger con carne fresca locale',
       'Insalatone complete e bilanciate',
       'Primi piatti del giorno',
       'Panini e piadine gourmet',
-      'Piatti vegetariani'
+      'Piatti vegetariani',
+      'E tanto altro...'
+
     ],
     accent: 'red-800'
   },
@@ -55,7 +60,8 @@ const menuContent = {
       'Gin Tonic premium',
       'Taglieri di salumi e formaggi',
       'Prosecco e bollicine',
-      'Aperitivi analcolici gourmet'
+      'Aperitivi analcolici gourmet',
+      'E tanto altro...'
     ],
     accent: 'red-700'
   }
@@ -66,11 +72,11 @@ const detailedMenu = {
   caffetteria: [
     'Caffè Espresso', 'Decaffeinato HAG', 'Caffè Corretto', 'Caffè Americano',
     'Cappuccino', 'Cappuccino HAG', 'Cappuccino d\'Orzo', 'Cappuccino Ginseng',
-    'Latte Macchiato', 'Marocchino Nutella', 'Cioccolata Calda'
+    'Latte Macchiato', 'Marocchino Nutella', 'Cioccolata Calda','Capuccino Vegano','E tanto altro...'
   ],
   primi: [
     'Spaghetti Carbonara', 'Risotto Zafferano', 'Mezze Penne Pomodoro',
-    'Trofie al Pesto', 'Penne Arrabbiata', 'Risotto Funghi'
+    'Trofie al Pesto', 'Penne Arrabbiata', 'Risotto Funghi','E tanto altro...'
   ],
   hamburger: [
     'Classico (hamburger, formaggio)',
@@ -80,16 +86,16 @@ const detailedMenu = {
   panini: [
     'Prosciutto Cotto Formaggio', 'Prosciutto Crudo Formaggio',
     'Speck e Brie', 'Tonno Pomodoro Insalata',
-    'Verdure Grigliate Stracchino', 'Salame Formaggio'
+    'Verdure Grigliate Stracchino', 'Salame Formaggio','E tanto altro...'
   ],
   insalate: [
     'Leggera (insalata, pomodoro, olive, mozzarella)',
     'Maxi (insalata, pomodoro, carote, tonno, uovo, mozzarella)',
-    'Caprese', 'Crudo e Mozzarella'
+    'Caprese', 'Crudo e Mozzarella','E tanto altro...'
   ],
   cocktail: [
     'Aperol Spritz', 'Hugo Spritz', 'Limoncello Spritz', 'Campari Spritz',
-    'Negroni', 'Negroni Sbagliato', 'Mojito', 'Moscow Mule'
+    'Negroni', 'Negroni Sbagliato', 'Mojito', 'Moscow Mule','E tanto altro...'
   ],
   gin: [
     'Gin Tonic', 'Gin Lemon',
@@ -97,7 +103,7 @@ const detailedMenu = {
   ],
   analcolici: [
     'Virgin Mojito', 'Virgin Spritz', 'Virgin Hugo',
-    'Crodino', 'Sanbitter'
+    'Crodino', 'Sanbitter','E tanto altro...'
   ]
 };
 
