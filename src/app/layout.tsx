@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: "bar genova, caffè voltri, colazione genova, aperitivo genova, focaccia genovese, caffè boasi, riell cafè",
   openGraph: {
     title: "Riell Cafè - Il Salotto di Voltri",
-    description: "Dal 2010 il punto di riferimento per colazione, pranzo e aperitivo a Genova Voltri",
+    description: "Dal 2005 il punto di riferimento per colazione, pranzo e aperitivo a Genova Voltri",
     type: "website",
   },
 };
