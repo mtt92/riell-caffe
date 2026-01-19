@@ -131,12 +131,11 @@ export default function RiellCafePage() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img
-                src="/images/logo.jpeg"
-                alt="Riell Cafè Logo"
-                className="h-12 md:h-16 w-auto"
-              />
-            </div>
+              <h1 className="flex flex-col leading-none">
+                <span className="text-3xl md:text-4xl font-light tracking-wide text-stone-800">riell</span>
+                <span className="text-sm md:text-base font-normal tracking-widest text-stone-700">—CAFÈ—</span>
+              </h1>
+             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
