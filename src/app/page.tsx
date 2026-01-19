@@ -22,7 +22,7 @@ const menuContent = {
       'Caffè Boasi - Miscela esclusiva',
       'Brioches artigianali ripiene',
       'Cornetti (cioccolato, pistacchio, mandorle, crema)',
-      'Cornetti Vegano',
+      'Cornetti Vegani',
       'Cappuccini cremosi con latte art',
       'Crostate Donuts al cioccolato e crema',
       'Spremute fresche di stagione',
@@ -81,7 +81,8 @@ const detailedMenu = {
   hamburger: [
     'Classico (hamburger, formaggio)',
     'Light (insalata, pomodoro, olio sale)',
-    'Ricco (formaggio, bacon, cipolla croccante)'
+    'Ricco (formaggio, bacon, cipolla croccante)',
+    'E tanto altro...'
   ],
   panini: [
     'Prosciutto Cotto Formaggio', 'Prosciutto Crudo Formaggio',
