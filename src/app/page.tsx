@@ -44,6 +44,7 @@ const menuContent = {
       'Panini e piadine gourmet',
       'Piatti vegetariani',
       'E tanto altro...'
+
     ],
     accent: 'red-800'
   },
@@ -66,6 +67,7 @@ const menuContent = {
   }
 };
 
+// Menu dettagliato per accordion
 const detailedMenu = {
   caffetteria: [
     'Caffè Espresso', 'Decaffeinato HAG', 'Caffè Corretto', 'Caffè Americano',
@@ -124,16 +126,18 @@ export default function RiellCafePage() {
 
   return (
     <div className={`${inter.variable} ${pacifico.variable} font-sans bg-stone-50 text-stone-900`}>
+      {/* Navbar Sticky */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <h1 className="flex flex-col leading-none">
-                <span className="text-3xl md:text-4xl font-bold tracking-wide text-stone-900">riell</span>
-                <span className="text-sm md:text-base font-semibold tracking-widest text-stone-800">—CAFÈ—</span>
+                <span className="text-3xl md:text-4xl font-light tracking-wide text-stone-800">riell</span>
+                <span className="text-sm md:text-base font-normal tracking-widest text-stone-700">—CAFÈ—</span>
               </h1>
-            </div>
+             </div>
 
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('home')} className="hover:text-red-800 transition-colors">
                 Home
@@ -153,6 +157,7 @@ export default function RiellCafePage() {
               </span>
             </div>
 
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden text-stone-900"
@@ -161,6 +166,7 @@ export default function RiellCafePage() {
             </button>
           </div>
 
+          {/* Mobile Menu */}
           {mobileMenuOpen && (
             <div className="md:hidden mt-4 pb-4 flex flex-col gap-4">
               <button onClick={() => scrollToSection('home')} className="text-left hover:text-red-800 transition-colors">
@@ -180,6 +186,7 @@ export default function RiellCafePage() {
         </div>
       </nav>
 
+      {/* Hero Section */}
       <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
@@ -209,7 +216,7 @@ export default function RiellCafePage() {
             className="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-stone-100"
           >
             Dalla colazione all'alba, al pranzo veloce, fino all'aperitivo serale.<br />
-            Dal 2005, la tua pausa di qualità.
+            Dal 2010, la tua pausa di qualità.
           </motion.p>
 
           <motion.button
@@ -224,6 +231,7 @@ export default function RiellCafePage() {
         </div>
       </section>
 
+      {/* Menu Tab Section */}
       <section id="menu" className="py-20 bg-stone-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -241,6 +249,7 @@ export default function RiellCafePage() {
             </p>
           </motion.div>
 
+          {/* Tabs */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {(Object.keys(menuContent) as MenuTab[]).map((tab) => {
               const TabIcon = menuContent[tab].icon;
@@ -248,11 +257,10 @@ export default function RiellCafePage() {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all shadow-lg ${
-                    activeTab === tab
+                  className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all shadow-lg ${activeTab === tab
                       ? 'bg-red-800 text-white scale-105'
                       : 'bg-white text-stone-900 hover:bg-stone-100'
-                  }`}
+                    }`}
                 >
                   <TabIcon className="w-5 h-5" />
                   {menuContent[tab].title}
@@ -261,6 +269,7 @@ export default function RiellCafePage() {
             })}
           </div>
 
+          {/* Tab Content */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -270,6 +279,7 @@ export default function RiellCafePage() {
               transition={{ duration: 0.4 }}
               className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto"
             >
+              {/* Image */}
               <div className="order-2 md:order-1">
                 <img
                   src={currentContent.image}
@@ -278,6 +288,7 @@ export default function RiellCafePage() {
                 />
               </div>
 
+              {/* Content */}
               <div className="order-1 md:order-2 bg-white p-8 rounded-2xl shadow-lg">
                 <div className="flex items-center gap-4 mb-4">
                   <div className={`p-3 rounded-full bg-${currentContent.accent}/10`}>
@@ -313,6 +324,7 @@ export default function RiellCafePage() {
         </div>
       </section>
 
+      {/* Menu Dettagliato Accordion */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className={`${pacifico.className} text-4xl md:text-5xl text-red-800 mb-4 text-center`}>
@@ -321,6 +333,7 @@ export default function RiellCafePage() {
           <p className="text-center text-stone-600 mb-12">Clicca per espandere le categorie</p>
 
           <div className="space-y-4">
+            {/* Caffetteria */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'caffetteria' ? null : 'caffetteria')}
@@ -343,6 +356,7 @@ export default function RiellCafePage() {
               )}
             </div>
 
+            {/* Primi */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'primi' ? null : 'primi')}
@@ -365,6 +379,7 @@ export default function RiellCafePage() {
               )}
             </div>
 
+            {/* Hamburger */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'hamburger' ? null : 'hamburger')}
@@ -385,6 +400,7 @@ export default function RiellCafePage() {
               )}
             </div>
 
+            {/* Panini */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'panini' ? null : 'panini')}
@@ -407,6 +423,7 @@ export default function RiellCafePage() {
               )}
             </div>
 
+            {/* Insalate */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'insalate' ? null : 'insalate')}
@@ -427,6 +444,7 @@ export default function RiellCafePage() {
               )}
             </div>
 
+            {/* Cocktail */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'cocktail' ? null : 'cocktail')}
@@ -449,6 +467,7 @@ export default function RiellCafePage() {
               )}
             </div>
 
+            {/* Gin */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'gin' ? null : 'gin')}
@@ -469,6 +488,7 @@ export default function RiellCafePage() {
               )}
             </div>
 
+            {/* Analcolici */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'analcolici' ? null : 'analcolici')}
@@ -492,6 +512,7 @@ export default function RiellCafePage() {
         </div>
       </section>
 
+      {/* Aperitivi Section */}
       <section className="py-20 bg-stone-50">
         <div className="container mx-auto px-4">
           <h2 className={`${pacifico.className} text-4xl md:text-5xl text-red-800 mb-12 text-center`}>
@@ -543,6 +564,7 @@ export default function RiellCafePage() {
         </div>
       </section>
 
+      {/* Social Proof */}
       <section id="recensioni" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -599,9 +621,11 @@ export default function RiellCafePage() {
         </div>
       </section>
 
+      {/* Footer & Contatti */}
       <footer id="contatti" className="bg-stone-900 text-stone-100 py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 mb-12">
+            {/* Google Maps */}
             <div className="rounded-2xl overflow-hidden h-[300px] shadow-2xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.7!2d8.75!3d44.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDI1JzQ4LjAiTiA4wrA0NScwMC4wIkU!5e0!3m2!1sit!2sit!4v1234567890"
@@ -615,6 +639,7 @@ export default function RiellCafePage() {
               ></iframe>
             </div>
 
+            {/* Info Contatti */}
             <div className="space-y-6">
               <h3 className={`${pacifico.className} text-3xl text-red-400 mb-6`}>
                 Vieni a trovarci
@@ -642,7 +667,7 @@ export default function RiellCafePage() {
                 <Phone className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-lg">Telefono</p>
-                  
+                  <a
                     href="tel:+393403935560"
                     className="text-stone-300 hover:text-red-400 transition-colors"
                   >
@@ -655,7 +680,7 @@ export default function RiellCafePage() {
                 <Instagram className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-lg">Social</p>
-                  
+                  <a
                     href="https://www.instagram.com/riell_cafe/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -673,7 +698,7 @@ export default function RiellCafePage() {
             <p className="mb-2">© 2025 Riell Cafè - Il Salotto di Voltri. Tutti i diritti riservati.</p>
             <p className="text-sm mt-3 text-stone-500">
               Powered by{' '}
-              
+              <a
                 href="https://bysim.biz"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -683,10 +708,11 @@ export default function RiellCafePage() {
               </a>
             </p>
           </div>
-        </div>
+       </div>     
       </footer>
 
-      
+      {/* Floating WhatsApp Button */}
+      <a
         href="https://wa.me/393403935560"
         target="_blank"
         rel="noopener noreferrer"
@@ -698,3 +724,5 @@ export default function RiellCafePage() {
     </div>
   );
 }
+
+
