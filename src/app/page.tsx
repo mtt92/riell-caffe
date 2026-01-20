@@ -66,7 +66,6 @@ const menuContent = {
   }
 };
 
-// Menu dettagliato per accordion
 const detailedMenu = {
   caffetteria: [
     'Caffè Espresso', 'Decaffeinato HAG', 'Caffè Corretto', 'Caffè Americano',
@@ -124,8 +123,7 @@ export default function RiellCafePage() {
   const IconComponent = currentContent.icon;
 
   return (
-   <div className={`${inter.variable} ${pacifico.variable} font-sans bg-stone-50 text-stone-900`}>
-      {/* Navbar Sticky */}
+    <div className={`${inter.variable} ${pacifico.variable} font-sans bg-stone-50 text-stone-900`}>
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -134,9 +132,8 @@ export default function RiellCafePage() {
                 <span className="text-3xl md:text-4xl font-bold tracking-wide text-stone-900">riell</span>
                 <span className="text-sm md:text-base font-semibold tracking-widest text-stone-800">—CAFÈ—</span>
               </h1>
-             </div>
+            </div>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('home')} className="hover:text-red-800 transition-colors">
                 Home
@@ -156,7 +153,6 @@ export default function RiellCafePage() {
               </span>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden text-stone-900"
@@ -165,7 +161,6 @@ export default function RiellCafePage() {
             </button>
           </div>
 
-          {/* Mobile Menu */}
           {mobileMenuOpen && (
             <div className="md:hidden mt-4 pb-4 flex flex-col gap-4">
               <button onClick={() => scrollToSection('home')} className="text-left hover:text-red-800 transition-colors">
@@ -185,7 +180,6 @@ export default function RiellCafePage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
@@ -230,7 +224,6 @@ export default function RiellCafePage() {
         </div>
       </section>
 
-      {/* Menu Tab Section */}
       <section id="menu" className="py-20 bg-stone-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -248,7 +241,6 @@ export default function RiellCafePage() {
             </p>
           </motion.div>
 
-          {/* Tabs */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {(Object.keys(menuContent) as MenuTab[]).map((tab) => {
               const TabIcon = menuContent[tab].icon;
@@ -256,10 +248,11 @@ export default function RiellCafePage() {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all shadow-lg ${activeTab === tab
+                  className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all shadow-lg ${
+                    activeTab === tab
                       ? 'bg-red-800 text-white scale-105'
                       : 'bg-white text-stone-900 hover:bg-stone-100'
-                    }`}
+                  }`}
                 >
                   <TabIcon className="w-5 h-5" />
                   {menuContent[tab].title}
@@ -268,7 +261,6 @@ export default function RiellCafePage() {
             })}
           </div>
 
-          {/* Tab Content */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -278,7 +270,6 @@ export default function RiellCafePage() {
               transition={{ duration: 0.4 }}
               className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto"
             >
-              {/* Image */}
               <div className="order-2 md:order-1">
                 <img
                   src={currentContent.image}
@@ -287,7 +278,6 @@ export default function RiellCafePage() {
                 />
               </div>
 
-              {/* Content */}
               <div className="order-1 md:order-2 bg-white p-8 rounded-2xl shadow-lg">
                 <div className="flex items-center gap-4 mb-4">
                   <div className={`p-3 rounded-full bg-${currentContent.accent}/10`}>
@@ -323,7 +313,6 @@ export default function RiellCafePage() {
         </div>
       </section>
 
-      {/* Menu Dettagliato Accordion */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className={`${pacifico.className} text-4xl md:text-5xl text-red-800 mb-4 text-center`}>
@@ -332,7 +321,6 @@ export default function RiellCafePage() {
           <p className="text-center text-stone-600 mb-12">Clicca per espandere le categorie</p>
 
           <div className="space-y-4">
-            {/* Caffetteria */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'caffetteria' ? null : 'caffetteria')}
@@ -355,7 +343,6 @@ export default function RiellCafePage() {
               )}
             </div>
 
-            {/* Primi */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'primi' ? null : 'primi')}
@@ -378,7 +365,6 @@ export default function RiellCafePage() {
               )}
             </div>
 
-            {/* Hamburger */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'hamburger' ? null : 'hamburger')}
@@ -399,7 +385,6 @@ export default function RiellCafePage() {
               )}
             </div>
 
-            {/* Panini */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'panini' ? null : 'panini')}
@@ -422,7 +407,6 @@ export default function RiellCafePage() {
               )}
             </div>
 
-            {/* Insalate */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'insalate' ? null : 'insalate')}
@@ -443,7 +427,6 @@ export default function RiellCafePage() {
               )}
             </div>
 
-            {/* Cocktail */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'cocktail' ? null : 'cocktail')}
@@ -466,7 +449,6 @@ export default function RiellCafePage() {
               )}
             </div>
 
-            {/* Gin */}
             <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
               <button
                 onClick={() => setExpandedMenu(expandedMenu === 'gin' ? null : 'gin')}
@@ -476,4 +458,243 @@ export default function RiellCafePage() {
                   <Wine className="w-5 h-5 text-red-700" />
                   Gin Bar Premium
                 </span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${expandedMenu === 'gin' ? 'rotate-18
+                <ChevronDown className={`w-5 h-5 transition-transform ${expandedMenu === 'gin' ? 'rotate-180' : ''}`} />
+              </button>
+              {expandedMenu === 'gin' && (
+                <div className="px-6 pb-4 space-y-1">
+                  {detailedMenu.gin.map((item, idx) => (
+                    <p key={idx} className="text-stone-700 text-sm">• {item}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
+              <button
+                onClick={() => setExpandedMenu(expandedMenu === 'analcolici' ? null : 'analcolici')}
+                className="w-full px-6 py-4 flex items-center justify-between hover:bg-red-50 transition-colors"
+              >
+                <span className="font-semibold text-lg flex items-center gap-3">
+                  <Wine className="w-5 h-5 text-red-700" />
+                  Analcolici
+                </span>
+                <ChevronDown className={`w-5 h-5 transition-transform ${expandedMenu === 'analcolici' ? 'rotate-180' : ''}`} />
+              </button>
+              {expandedMenu === 'analcolici' && (
+                <div className="px-6 pb-4 space-y-1">
+                  {detailedMenu.analcolici.map((item, idx) => (
+                    <p key={idx} className="text-stone-700 text-sm">• {item}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-stone-50">
+        <div className="container mx-auto px-4">
+          <h2 className={`${pacifico.className} text-4xl md:text-5xl text-red-800 mb-12 text-center`}>
+            I Nostri Aperitivi
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg"
+            >
+              <img src="/images/spritz.jpeg" alt="Spritz" className="w-full h-64 object-cover" />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-red-800 mb-2">Spritz</h3>
+                <p className="text-stone-600">Aperol, Hugo, Limoncello e Campari Spritz</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg"
+            >
+              <img src="/images/gin.jpeg" alt="Gin" className="w-full h-64 object-cover" />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-red-800 mb-2">Gin Premium</h3>
+                <p className="text-stone-600">Gin Mare, Malfy, Hendrick's e altri selezionati</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg"
+            >
+              <img src="/images/prosecco.jpeg" alt="Prosecco" className="w-full h-64 object-cover" />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-red-800 mb-2">Bollicine</h3>
+                <p className="text-stone-600">Prosecco Astoria e Spumanti selezionati</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section id="recensioni" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className={`${pacifico.className} text-4xl md:text-5xl text-red-800 mb-4`}>
+              Dicono di Noi
+            </h2>
+            <p className="text-lg text-stone-600">
+              La soddisfazione dei nostri clienti è il nostro miglior biglietto da visita.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-stone-50 p-8 rounded-2xl shadow-lg"
+            >
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-amber-500 text-amber-500" />
+                ))}
+              </div>
+              <p className="text-stone-700 mb-4 leading-relaxed italic">
+                "Aperitivo 10+... locale consigliato anche per la gentilezza. Ottimo bar, ampi spazi, ordinato e pulito."
+              </p>
+              <p className="text-stone-900 font-semibold">— Cliente verificato</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-stone-50 p-8 rounded-2xl shadow-lg"
+            >
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-amber-500 text-amber-500" />
+                ))}
+              </div>
+              <p className="text-stone-700 mb-4 leading-relaxed italic">
+                "Pranzo sempre veloce con un panino a piacimento. Personale simpatico e competente."
+              </p>
+              <p className="text-stone-900 font-semibold">— Cliente abituale</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <footer id="contatti" className="bg-stone-900 text-stone-100 py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            <div className="rounded-2xl overflow-hidden h-[300px] shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.7!2d8.75!3d44.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDI1JzQ4LjAiTiA4wrA0NScwMC4wIkU!5e0!3m2!1sit!2sit!4v1234567890"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mappa Riell Cafè"
+              ></iframe>
+            </div>
+
+            <div className="space-y-6">
+              <h3 className={`${pacifico.className} text-3xl text-red-400 mb-6`}>
+                Vieni a trovarci
+              </h3>
+
+              <div className="flex items-start gap-4">
+                <MapPin className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-semibold text-lg">Indirizzo</p>
+                  <p className="text-stone-300">Piazza Nicolò da Voltri, 2/R</p>
+                  <p className="text-stone-300">16158 Genova Voltri (GE)</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Clock className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-semibold text-lg">Orari di apertura</p>
+                  <p className="text-stone-300">Lunedì - Sabato: 05:00 – 20:00</p>
+                  <p className="text-red-400 font-semibold">Domenica: CHIUSO</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Phone className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-semibold text-lg">Telefono</p>
+                  
+                    href="tel:+393403935560"
+                    className="text-stone-300 hover:text-red-400 transition-colors"
+                  >
+                    +39 340 393 5560
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Instagram className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-semibold text-lg">Social</p>
+                  
+                    href="https://www.instagram.com/riell_cafe/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-stone-300 hover:text-red-400 transition-colors"
+                  >
+                    @riell_cafe
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-stone-700 pt-8 text-center text-stone-400">
+            <p className={`${pacifico.className} text-2xl text-red-400 mb-2`}>Riell Cafè</p>
+            <p className="mb-2">© 2025 Riell Cafè - Il Salotto di Voltri. Tutti i diritti riservati.</p>
+            <p className="text-sm mt-3 text-stone-500">
+              Powered by{' '}
+              
+                href="https://bysim.biz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red-400 hover:text-red-300 transition-colors font-semibold"
+              >
+                bysim.biz
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      
+        href="https://wa.me/393403935560"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110"
+        aria-label="Contattaci su WhatsApp"
+      >
+        <MessageCircle className="w-6 h-6" />
+      </a>
+    </div>
+  );
+}
