@@ -132,8 +132,8 @@ export default function RiellCafePage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <h1 className="flex flex-col leading-none">
-                <span className="text-3xl md:text-4xl font-light tracking-wide text-stone-800">riell</span>
-                <span className="text-sm md:text-base font-normal tracking-widest text-stone-700">—CAFÈ—</span>
+                <span className="text-3xl md:text-4xl font-bold tracking-wide text-stone-900">riell</span>
+                <span className="text-sm md:text-base font-semibold tracking-widest text-stone-800">—CAFÈ—</span>
               </h1>
              </div>
 
