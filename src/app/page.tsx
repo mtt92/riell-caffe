@@ -44,7 +44,6 @@ const menuContent = {
       'Panini e piadine gourmet',
       'Piatti vegetariani',
       'E tanto altro...'
-
     ],
     accent: 'red-800'
   },
@@ -132,8 +131,8 @@ export default function RiellCafePage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <h1 className="flex flex-col leading-none">
-                <span className="text-3xl md:text-4xl font-light tracking-wide text-stone-800">riell</span>
-                <span className="text-sm md:text-base font-normal tracking-widest text-stone-700">—CAFÈ—</span>
+                <span className="text-3xl md:text-4xl font-bold tracking-wide text-stone-900">riell</span>
+                <span className="text-sm md:text-base font-semibold tracking-widest text-stone-800">—CAFÈ—</span>
               </h1>
              </div>
 
@@ -216,7 +215,7 @@ export default function RiellCafePage() {
             className="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-stone-100"
           >
             Dalla colazione all'alba, al pranzo veloce, fino all'aperitivo serale.<br />
-            Dal 2010, la tua pausa di qualità.
+            Dal 2005, la tua pausa di qualità.
           </motion.p>
 
           <motion.button
@@ -477,250 +476,4 @@ export default function RiellCafePage() {
                   <Wine className="w-5 h-5 text-red-700" />
                   Gin Bar Premium
                 </span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${expandedMenu === 'gin' ? 'rotate-180' : ''}`} />
-              </button>
-              {expandedMenu === 'gin' && (
-                <div className="px-6 pb-4 space-y-1">
-                  {detailedMenu.gin.map((item, idx) => (
-                    <p key={idx} className="text-stone-700 text-sm">• {item}</p>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Analcolici */}
-            <div className="bg-stone-50 rounded-xl overflow-hidden shadow-lg">
-              <button
-                onClick={() => setExpandedMenu(expandedMenu === 'analcolici' ? null : 'analcolici')}
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-red-50 transition-colors"
-              >
-                <span className="font-semibold text-lg flex items-center gap-3">
-                  <Wine className="w-5 h-5 text-red-700" />
-                  Analcolici
-                </span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${expandedMenu === 'analcolici' ? 'rotate-180' : ''}`} />
-              </button>
-              {expandedMenu === 'analcolici' && (
-                <div className="px-6 pb-4 space-y-1">
-                  {detailedMenu.analcolici.map((item, idx) => (
-                    <p key={idx} className="text-stone-700 text-sm">• {item}</p>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Aperitivi Section */}
-      <section className="py-20 bg-stone-50">
-        <div className="container mx-auto px-4">
-          <h2 className={`${pacifico.className} text-4xl md:text-5xl text-red-800 mb-12 text-center`}>
-            I Nostri Aperitivi
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg"
-            >
-              <img src="/images/spritz.jpeg" alt="Spritz" className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-red-800 mb-2">Spritz</h3>
-                <p className="text-stone-600">Aperol, Hugo, Limoncello e Campari Spritz</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg"
-            >
-              <img src="/images/gin.jpeg" alt="Gin" className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-red-800 mb-2">Gin Premium</h3>
-                <p className="text-stone-600">Gin Mare, Malfy, Hendrick's e altri selezionati</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg"
-            >
-              <img src="/images/prosecco.jpeg" alt="Prosecco" className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-red-800 mb-2">Bollicine</h3>
-                <p className="text-stone-600">Prosecco Astoria e Spumanti selezionati</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section id="recensioni" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className={`${pacifico.className} text-4xl md:text-5xl text-red-800 mb-4`}>
-              Dicono di Noi
-            </h2>
-            <p className="text-lg text-stone-600">
-              La soddisfazione dei nostri clienti è il nostro miglior biglietto da visita.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-stone-50 p-8 rounded-2xl shadow-lg"
-            >
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-amber-500 text-amber-500" />
-                ))}
-              </div>
-              <p className="text-stone-700 mb-4 leading-relaxed italic">
-                "Aperitivo 10+... locale consigliato anche per la gentilezza. Ottimo bar, ampi spazi, ordinato e pulito."
-              </p>
-              <p className="text-stone-900 font-semibold">— Cliente verificato</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-stone-50 p-8 rounded-2xl shadow-lg"
-            >
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-amber-500 text-amber-500" />
-                ))}
-              </div>
-              <p className="text-stone-700 mb-4 leading-relaxed italic">
-                "Pranzo sempre veloce con un panino a piacimento. Personale simpatico e competente."
-              </p>
-              <p className="text-stone-900 font-semibold">— Cliente abituale</p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer & Contatti */}
-      <footer id="contatti" className="bg-stone-900 text-stone-100 py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
-            {/* Google Maps */}
-            <div className="rounded-2xl overflow-hidden h-[300px] shadow-2xl">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.7!2d8.75!3d44.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDI1JzQ4LjAiTiA4wrA0NScwMC4wIkU!5e0!3m2!1sit!2sit!4v1234567890"
-                width="100%"
-                height="300"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Mappa Riell Cafè"
-              ></iframe>
-            </div>
-
-            {/* Info Contatti */}
-            <div className="space-y-6">
-              <h3 className={`${pacifico.className} text-3xl text-red-400 mb-6`}>
-                Vieni a trovarci
-              </h3>
-
-              <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-semibold text-lg">Indirizzo</p>
-                  <p className="text-stone-300">Piazza Nicolò da Voltri, 2/R</p>
-                  <p className="text-stone-300">16158 Genova Voltri (GE)</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <Clock className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-semibold text-lg">Orari di apertura</p>
-                  <p className="text-stone-300">Lunedì - Sabato: 05:00 – 20:00</p>
-                  <p className="text-red-400 font-semibold">Domenica: CHIUSO</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <Phone className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-semibold text-lg">Telefono</p>
-                  <a
-                    href="tel:+393403935560"
-                    className="text-stone-300 hover:text-red-400 transition-colors"
-                  >
-                    +39 340 393 5560
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <Instagram className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-semibold text-lg">Social</p>
-                  <a
-                    href="https://www.instagram.com/riell_cafe/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-stone-300 hover:text-red-400 transition-colors"
-                  >
-                    @riell_cafe
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-stone-700 pt-8 text-center text-stone-400">
-            <p className={`${pacifico.className} text-2xl text-red-400 mb-2`}>Riell Cafè</p>
-            <p className="mb-2">© 2025 Riell Cafè - Il Salotto di Voltri. Tutti i diritti riservati.</p>
-            <p className="text-sm mt-3 text-stone-500">
-              Powered by{' '}
-              <a
-                href="https://bysim.biz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-red-400 hover:text-red-300 transition-colors font-semibold"
-              >
-                bysim.biz
-              </a>
-            </p>
-          </div>
-       </div>     
-      </footer>
-
-      {/* Floating WhatsApp Button */}
-      <a
-        href="https://wa.me/393403935560"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110"
-        aria-label="Contattaci su WhatsApp"
-      >
-        <MessageCircle className="w-6 h-6" />
-      </a>
-    </div>
-  );
-}
+                <ChevronDown className={`w-5 h-5 transition-transform ${expandedMenu === 'gin' ? 'rotate-18
