@@ -216,7 +216,7 @@ export default function RiellCafePage() {
             className="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-stone-100"
           >
             Dalla colazione all'alba, al pranzo veloce, fino all'aperitivo serale.<br />
-            Dal 2010, la tua pausa di qualità.
+            Dal 2005, la tua pausa di qualità.
           </motion.p>
 
           <motion.button
