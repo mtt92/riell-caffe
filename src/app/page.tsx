@@ -124,7 +124,7 @@ export default function RiellCafePage() {
   const IconComponent = currentContent.icon;
 
   return (
-    <div className={${inter.variable} ${pacifico.variable} font-sans bg-stone-50 text-stone-900`}>
+   <div className={`${inter.variable} ${pacifico.variable} font-sans bg-stone-50 text-stone-900`}>
       {/* Navbar Sticky */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
         <div className="container mx-auto px-4 py-4">
