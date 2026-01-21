@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Coffee, Utensils, Wine, Star, MapPin, Phone, Clock, Instagram, MessageCircle, Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Inter, Pacifico } from 'next/font/google';
@@ -694,22 +695,29 @@ export default function RiellCafePage() {
           </div>
 
           <div className="border-t border-stone-700 pt-8 text-center text-stone-400">
-            <p className={`${pacifico.className} text-2xl text-red-400 mb-2`}>Riell Cafè</p>
-            <p className="mb-2">© 2025 Riell Cafè - Il Salotto di Voltri. Tutti i diritti riservati.</p>
-            <p className="text-sm mt-3 text-stone-500">
-              Powered by{' '}
-              <a
-                href="https://bysim.biz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-red-400 hover:text-red-300 transition-colors font-semibold"
-              >
-                bysim.biz
-              </a>
-            </p>
-          </div>
-       </div>     
-      </footer>
+  <p className={`${pacifico.className} text-2xl text-red-400 mb-2`}>Riell Cafè</p>
+  <p className="mb-2">© 2025 Riell Cafè - Il Salotto di Voltri. Tutti i diritti riservati.</p>
+  <div className="flex items-center justify-center gap-4 text-xs mt-3">
+    <Link 
+      href="/privacy"
+      className="text-stone-500 hover:text-red-400 transition-colors underline"
+    >
+      Privacy Policy
+    </Link>
+    <span className="text-stone-600">•</span>
+    <span className="text-stone-500">
+      Powered by{' '}
+      
+        href="https://bysim.biz"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-red-400 hover:text-red-300 transition-colors font-semibold"
+      >
+        bysim.biz
+      </a>
+    </span>
+  </div>
+</div>
 
       {/* Floating WhatsApp Button */}
       <a
